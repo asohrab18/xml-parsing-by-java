@@ -1,0 +1,12 @@
+<laptops>
+    <laptop name="Dell" os="windows">
+        <price value="INR">50000</price>
+        <ram value="GB">8</ram>
+        <ssd value="GB">250</ssd>
+    </laptop>
+	<laptop name="Lenovo" os="linux">
+        <price value="USD">100</price>
+        <ram value="MB">90</ram>
+        <ssd value="KB">1650</ssd>
+    </laptop>
+</laptops>

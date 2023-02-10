@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<methodResponse>
+	<params>
+		<param>
+			<value>
+				<struct>
+					<member myattr1="A01" myattr2="B02" myattr3="C03">
+						<id>123</id>
+						<name><a><b><c>clientTransactionID</c></b></a></name>
+						<value><string>dcecb084-5541-4b43-b1f0-d0b695150c29</string></value>
+						<city>Meerut</city>
+						<country>India</country>
+					</member>
+				</struct>
+			</value>
+		</param>
+	</params>
+</methodResponse>
