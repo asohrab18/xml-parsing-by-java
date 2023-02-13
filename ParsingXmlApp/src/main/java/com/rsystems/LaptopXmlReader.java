@@ -15,11 +15,12 @@ import org.xml.sax.SAXException;
 
 public class LaptopXmlReader {
 
+	private static final String INPUT_FILE_PATH = "C:/Users/Sohrab/xml_files/laptops.xml";
+
 	public static void main(String[] args) throws ParserConfigurationException, SAXException, IOException {
-		String filePath = "C:/Users/Sohrab/xml_files/laptops.xml";
 		DocumentBuilderFactory documentBuilderFactory = DocumentBuilderFactory.newInstance();
 		DocumentBuilder documentBuilder = documentBuilderFactory.newDocumentBuilder();
-		Document document = documentBuilder.parse(new File(filePath));
+		Document document = documentBuilder.parse(new File(INPUT_FILE_PATH));
 		document.getDocumentElement().normalize();
 
 		NodeList nodeList = document.getElementsByTagName("laptop");

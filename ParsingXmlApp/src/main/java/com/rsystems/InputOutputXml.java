@@ -21,8 +21,11 @@ import org.xml.sax.SAXException;
 
 public class InputOutputXml {
 
+	private static final String INPUT_FILE_PATH = "C:/Users/Sohrab/xml_files/input.xml";
+	private static final String OUTPUT_FILE_PATH = "C:/Users/Sohrab/xml_files/output.xml";
+
 	public static void main(String[] args) throws ParserConfigurationException, SAXException, IOException, TransformerException {
-		File inputFile = new File("C:/Users/Sohrab/xml_files/input.xml");
+		File inputFile = new File(INPUT_FILE_PATH);
 		DocumentBuilderFactory docFactory = DocumentBuilderFactory.newInstance();
 		DocumentBuilder docBuilder = docFactory.newDocumentBuilder();
 		Document document = docBuilder.parse(inputFile);
@@ -44,7 +47,7 @@ public class InputOutputXml {
 			}
 		}
 		// write the content
-		FileOutputStream output = new FileOutputStream("C:/Users/Sohrab/xml_files/output.xml");
+		FileOutputStream output = new FileOutputStream(OUTPUT_FILE_PATH);
 		StreamResult result = new StreamResult(output);
 
 		TransformerFactory transformerFactory = TransformerFactory.newInstance();

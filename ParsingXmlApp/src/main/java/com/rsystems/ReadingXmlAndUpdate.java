@@ -24,12 +24,14 @@ import org.xml.sax.SAXException;
 
 public class ReadingXmlAndUpdate {
 
+	private static final String INPUT_FILE_PATH = "C:/Users/Sohrab/xml_files/Response.xml";
+	private static final String OUTPUT_FILE_PATH = "C:/Users/Sohrab/xml_files/ResponseOutput.xml";
+
 	public static void main(String[] args) throws ParserConfigurationException, SAXException, IOException, TransformerException {
-		String filePath = "C:/Users/Sohrab/xml_files/Response.xml";
 		DocumentBuilderFactory dbf = DocumentBuilderFactory.newInstance();
 		dbf.setFeature(XMLConstants.FEATURE_SECURE_PROCESSING, true);
 		DocumentBuilder db = dbf.newDocumentBuilder();
-		Document document = db.parse(new File(filePath));
+		Document document = db.parse(new File(INPUT_FILE_PATH));
 		document.getDocumentElement().normalize();
 
 		Map<String, String> tagContentMap = new HashMap<String, String>();
@@ -49,7 +51,7 @@ public class ReadingXmlAndUpdate {
 		// write the content
 		DOMSource domSource = new DOMSource(document);
 
-		FileOutputStream fileOutputStream = new FileOutputStream("C:/Users/Sohrab/xml_files/ResponseOutput.xml");
+		FileOutputStream fileOutputStream = new FileOutputStream(OUTPUT_FILE_PATH);
 		StreamResult streamResult = new StreamResult(fileOutputStream);
 
 		TransformerFactory transformerFactory = TransformerFactory.newInstance();

@@ -27,17 +27,19 @@ import org.xml.sax.SAXException;
 
 public class ReadingSimpleXmlAndUpdate {
 
+	private static final String INPUT_FILE_PATH = "C:/Users/Sohrab/xml_files/SimpleResponse.xml";
+	private static final String OUTPUT_FILE_PATH = "C:/Users/Sohrab/xml_files/SimpleResponseOutput.xml";
+
 	public static void main(String[] args)
 			throws ParserConfigurationException, SAXException, IOException, TransformerException {
 		readResponseFile();
 	}
 
 	public static void readResponseFile() throws ParserConfigurationException, SAXException, IOException, TransformerException {
-		String filePath = "C:/Users/Sohrab/xml_files/SimpleResponse.xml";
 		DocumentBuilderFactory dbf = DocumentBuilderFactory.newInstance();
 		dbf.setFeature(XMLConstants.FEATURE_SECURE_PROCESSING, true);
 		DocumentBuilder db = dbf.newDocumentBuilder();
-		Document document = db.parse(new File(filePath));
+		Document document = db.parse(new File(INPUT_FILE_PATH));
 		document.getDocumentElement().normalize();
 
 		Map<String, String> tagContentMap = new HashMap<String, String>();
@@ -52,7 +54,7 @@ public class ReadingSimpleXmlAndUpdate {
 		// write the content
 		DOMSource source = new DOMSource(document);
 
-		FileOutputStream output = new FileOutputStream("C:/Users/Sohrab/xml_files/SimpleResponseOutput.xml");
+		FileOutputStream output = new FileOutputStream(OUTPUT_FILE_PATH);
 		StreamResult result = new StreamResult(output);
 
 		TransformerFactory transformerFactory = TransformerFactory.newInstance();
@@ -94,13 +96,15 @@ public class ReadingSimpleXmlAndUpdate {
 		}
 	}
 
+	private static final String INPUT_FILE_PATH_NEW = "C:/Users/Sohrab/xml_files/InputFile.xml";
+	private static final String OUTPUT_FILE_PATH_NEW = "C:/Users/Sohrab/xml_files/OutputFile.xml";
+
 	public static void processByElementMethods()
 			throws TransformerException, ParserConfigurationException, SAXException, IOException {
-		String filePath = "C:/Users/Sohrab/xml_files/InputFile.xml";
 		DocumentBuilderFactory dbf = DocumentBuilderFactory.newInstance();
 		dbf.setFeature(XMLConstants.FEATURE_SECURE_PROCESSING, true);
 		DocumentBuilder db = dbf.newDocumentBuilder();
-		Document document = db.parse(new File(filePath));
+		Document document = db.parse(new File(INPUT_FILE_PATH_NEW));
 		document.getDocumentElement().normalize();
 
 		NodeList nodeList = document.getElementsByTagName("member");
@@ -121,7 +125,7 @@ public class ReadingSimpleXmlAndUpdate {
 		// write the content
 		DOMSource source = new DOMSource(document);
 
-		FileOutputStream output = new FileOutputStream("C:/Users/Sohrab/xml_files/OutputFile.xml");
+		FileOutputStream output = new FileOutputStream(OUTPUT_FILE_PATH_NEW);
 		StreamResult result = new StreamResult(output);
 
 		TransformerFactory transformerFactory = TransformerFactory.newInstance();
@@ -132,11 +136,10 @@ public class ReadingSimpleXmlAndUpdate {
 
 	public static void processByNodeMethods()
 			throws TransformerException, ParserConfigurationException, SAXException, IOException {
-		String filePath = "C:/Users/Sohrab/xml_files/InputFile.xml";
 		DocumentBuilderFactory dbf = DocumentBuilderFactory.newInstance();
 		dbf.setFeature(XMLConstants.FEATURE_SECURE_PROCESSING, true);
 		DocumentBuilder db = dbf.newDocumentBuilder();
-		Document document = db.parse(new File(filePath));
+		Document document = db.parse(new File(INPUT_FILE_PATH_NEW));
 		document.getDocumentElement().normalize();
 
 		NodeList nodeList = document.getElementsByTagName("member");
@@ -197,7 +200,7 @@ public class ReadingSimpleXmlAndUpdate {
 		// write the content
 		DOMSource source = new DOMSource(document);
 
-		FileOutputStream output = new FileOutputStream("C:/Users/Sohrab/xml_files/OutputFile.xml");
+		FileOutputStream output = new FileOutputStream(OUTPUT_FILE_PATH_NEW);
 		StreamResult result = new StreamResult(output);
 
 		TransformerFactory transformerFactory = TransformerFactory.newInstance();

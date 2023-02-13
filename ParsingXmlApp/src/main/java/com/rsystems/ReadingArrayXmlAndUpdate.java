@@ -23,14 +23,16 @@ import org.w3c.dom.NodeList;
 import org.xml.sax.SAXException;
 
 public class ReadingArrayXmlAndUpdate {
+	
+	private static final String INPUT_FILE_PATH = "C:/Users/Sohrab/xml_files/ArrayResponse.xml";
+	private static final String OUTPUT_FILE_PATH = "C:/Users/Sohrab/xml_files/ArrayResponseOutput.xml";
 
 	public static void main(String[] args)
 			throws ParserConfigurationException, SAXException, IOException, TransformerException {
-		String filePath = "C:/Users/Sohrab/xml_files/ArrayResponse.xml";
 		DocumentBuilderFactory dbf = DocumentBuilderFactory.newInstance();
 		dbf.setFeature(XMLConstants.FEATURE_SECURE_PROCESSING, true);
 		DocumentBuilder db = dbf.newDocumentBuilder();
-		Document document = db.parse(new File(filePath));
+		Document document = db.parse(new File(INPUT_FILE_PATH));
 		document.getDocumentElement().normalize();
 
 		Map<String, String> tagContentMap = new HashMap<String, String>();
@@ -41,7 +43,7 @@ public class ReadingArrayXmlAndUpdate {
 		// write the content
 		DOMSource source = new DOMSource(document);
 
-		FileOutputStream output = new FileOutputStream("C:/Users/Sohrab/xml_files/ArrayResponseOutput.xml");
+		FileOutputStream output = new FileOutputStream(OUTPUT_FILE_PATH);
 		StreamResult result = new StreamResult(output);
 
 		TransformerFactory transformerFactory = TransformerFactory.newInstance();
