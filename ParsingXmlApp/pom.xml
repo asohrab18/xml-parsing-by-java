@@ -3,12 +3,4 @@
 	<groupId>com.rsystems</groupId>
 	<artifactId>ParsingXmlApp</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-
-	<dependencies>
-		<dependency>
-			<groupId>javax.xml</groupId>
-			<artifactId>jaxp-api</artifactId>
-			<version>1.4</version>
-		</dependency>
-	</dependencies>
 </project>
