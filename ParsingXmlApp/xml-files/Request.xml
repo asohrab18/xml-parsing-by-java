@@ -1,0 +1,35 @@
+<methodCall>
+    <methodName type="xs:string">CardDetail</methodName>
+    <params>
+        <param>
+            <value>
+                <string>0008866376</string>
+            </value>
+        </param>
+        <param>
+            <value>
+                <string>TEST_CUSTOMER</string>
+            </value>
+        </param>
+        <param>
+            <value>
+                <string>787454700000007</string>
+            </value>
+        </param>
+        <param>
+            <value>
+                <string>d89d6df6-4e14-45a5-a32c-217c7175dfdb</string>
+            </value>
+        </param>
+        <param>
+            <value>
+                <dateTime.iso8601>20160525T00:00:00</dateTime.iso8601>
+            </value>
+        </param>
+        <param>
+            <value>
+                <string>1F578A133D69E482FEEEBB9A8557545DCFB4C4DD</string>
+            </value>
+        </param>
+    </params>
+</methodCall>
